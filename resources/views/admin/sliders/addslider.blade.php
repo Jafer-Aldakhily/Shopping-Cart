@@ -51,7 +51,7 @@ add slider
               <!-- /.card-header -->
               <!-- form start -->
               <!-- <form id="quickForm"> -->
-                <form action="/saveslider" method="post">
+                <form action="https://saveslider" method="post">
                   @csrf
                   <div class="card-body">
                     <div class="form-group">
