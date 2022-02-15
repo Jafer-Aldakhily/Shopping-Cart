@@ -31,7 +31,74 @@ add slider
     <section class="content">
       <div class="container-fluid">
         <div class="row">
+
           <!-- left column -->
+          <div class="col-md-12">
+            <!-- jquery validation -->
+            <div class="card card-warning">
+              <div class="card-header">
+                <h3 class="card-title">Add slider</h3>
+              </div>
+              @if (session()->has('success'))
+              <div class="alert alert-success">{{session()->get('success')}}</div>
+              @endif
+
+              @if(count($errors) > 0)
+              @foreach ($errors->all() as $error)
+              <div class="alert alert-danger">{{$error}}</div>
+              @endforeach
+              @endif
+              <!-- /.card-header -->
+              <!-- form start -->
+              <!-- <form id="quickForm"> -->
+                <form action="/saveslider" method="post">
+                  @csrf
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Description1</label>
+                      <input type="text" class="form-control" name="description1" placeholder = "Enter Enter description1">
+                    </div>
+                    <div class="form-group">
+                      <label for="Description2">Description2</label>
+                      <input type="text" name="description2" class="form-control" placeholder="Enter description2">
+                    </div>
+                    {{-- <label for="exampleInputFile">Product image</label> --}}
+                    <label for="slider image">Slider image</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        {{-- <input type="file" class="custom-file-input" id="exampleInputFile"> --}}
+                        <input type="file" name="slider_image" class="custom-file-input">
+                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                      </div>
+                      <div class="input-group-append">
+                        <span class="input-group-text">Upload</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+                </form>
+                {{-- {!! Form::open(['action' => 'App\Http\Controllers\SliderController@saveSlider','autocomplete' => 'off','enctype' => 'multipart/form-data']) !!} --}}
+                  {{-- {{csrf_field()}} --}}
+                
+                <div class="card-footer">
+                  <!-- <button type="submit" class="btn btn-success">Submit</button> -->
+                  <input type="submit" class="btn btn-success" value="Save">
+                  {{-- {{Form::submit('Save' , ['class' => 'btn btn-primary'])}} --}}
+                </div>
+              {{-- </form> --}}
+              {{-- {!! Form::close() !!} --}}
+
+            </div>
+            <!-- /.card -->
+            </div>
+          <!--/.col (left) -->
+          <!-- right column -->
+          {{-- <div class="col-md-6"> --}}
+
+          </div>
+          <!--/.col (right) -->
+
+          {{-- <!-- left column -->
           <div class="col-md-12">
             <!-- jquery validation -->
             <div class="card card-warning">
@@ -62,38 +129,39 @@ add slider
                     {{Form::text('description2' , '' , ['class' => 'form-control' , 'placeholder' => 'Enter description2'])}}
                   </div>
                   {{-- <label for="exampleInputFile">Product image</label> --}}
-                  {{Form::label('' , 'Slider image')}}
-                  <div class="input-group">
-                    <div class="custom-file">
+                  {{-- {{Form::label('' , 'Slider image')}} --}}
+                  {{-- <div class="input-group"> --}}
+                    {{-- <div class="custom-file"> --}}
                       {{-- <input type="file" class="custom-file-input" id="exampleInputFile"> --}}
-                      {{Form::file('slider_image' ,  ['class' => 'custom-file-input'])}}
-                      <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                    </div>
-                    <div class="input-group-append">
-                      <span class="input-group-text">Upload</span>
-                    </div>
-                  </div>
-                </div>
+                      {{-- {{Form::file('slider_image' ,  ['class' => 'custom-file-input'])}} --}}
+                      {{-- <label class="custom-file-label" for="exampleInputFile">Choose file</label> --}}
+                    {{-- </div> --}}
+                    {{-- <div class="input-group-append"> --}}
+                      {{-- <span class="input-group-text">Upload</span> --}}
+                    {{-- </div> --}}
+                  {{-- </div> --}}
+                {{-- </div> --}}
                 <!-- /.card-body -->
-                <div class="card-footer">
+                {{-- <div class="card-footer"> --}}
                   <!-- <button type="submit" class="btn btn-success">Submit</button> -->
                   {{-- <input type="submit" class="btn btn-success" value="Save"> --}}
-                  {{Form::submit('Save' , ['class' => 'btn btn-primary'])}}
-                </div>
+                  {{-- {{Form::submit('Save' , ['class' => 'btn btn-primary'])}} --}}
+                {{-- </div> --}}
               {{-- </form> --}}
-              {!! Form::close() !!}
+              {{-- {!! Form::close() !!} --}}
 
-            </div>
+            {{-- </div> --}}
             <!-- /.card -->
-            </div>
+            {{-- </div> --}}
           <!--/.col (left) -->
           <!-- right column -->
-          <div class="col-md-6">
+          {{-- <div class="col-md-6"> --}}
 
-          </div>
+          {{-- </div> --}}
           <!--/.col (right) -->
-        </div>
-        <!-- /.row -->
+        {{-- </div> --}}
+        <!-- /.row --> 
+
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
