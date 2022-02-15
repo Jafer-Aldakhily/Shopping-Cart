@@ -84,6 +84,10 @@ Route::get('/view-pdf/{id}' , [PdfController::class , 'view_pdf']);
 // Payment Checkout Route
 Route::get('/payment-success' , [OrderController::class , 'payment_success']);
 
+Route::get('/test',function(){
+    dd("Test is work");
+});
+
 
 
 

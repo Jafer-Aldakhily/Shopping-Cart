@@ -51,7 +51,7 @@ add slider
               <!-- form start -->
               <!-- <form id="quickForm"> -->
                 {!! Form::open(['action' => 'App\Http\Controllers\SliderController@saveSlider','autocomplete' => 'off','enctype' => 'multipart/form-data']) !!}
-                  @csrf
+                  {{csrf_field()}}
                 <div class="card-body">
                   <div class="form-group">
                     {{Form::label('' , 'Description1' , ['for' => 'exampleInputEmail1'])}}
